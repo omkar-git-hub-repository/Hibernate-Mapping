@@ -19,24 +19,25 @@ public class SetDetails {
         
         System.out.println("Setting up application details...");
         Student s = new Student();
-        s.setName("Alice Doe");
-        s.setEmail("alice.doe@example.com");
+        s.setName("kia sain");
+        s.setEmail("Kia@gmail.com");
 
         
         
         StudentDoc sd = new StudentDoc();
-        sd.setPanNumber("ASKO-1234k");
-        sd.setAadharNumber("5421-7849-6523");
+        sd.setPanNumber("RWQIJ-1234-5678");
+        sd.setAadharNumber("1234-5678-9101");
       
         // Establishing the relationship
         sd.setStudent(s);
         s.setStudentDoc(sd);
 
-        
+        // Persisting the entities of StudentDoc due to mappedBy relationship it will automatically persist the Student entity
         session.persist(sd);
 
         transaction.commit();
         session.close();
         System.out.println("Details set successfully: " + s);
+        
     }
 }
