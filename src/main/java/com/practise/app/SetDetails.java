@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import com.practise.Entity.StudVehicles;
 import com.practise.Entity.Student;
 import com.practise.Entity.StudentDoc;
 import com.practise.Utility.HibernateUtility;
@@ -27,6 +28,12 @@ public class SetDetails {
         StudentDoc sd = new StudentDoc();
         sd.setPanNumber("RWQIJ-1234-5678");
         sd.setAadharNumber("1234-5678-9101");
+
+        StudVehicles sv = new StudVehicles();
+        sv.setVehicleName("Activa ");
+        sv.setVehicleType("Two Wheeler");
+        sv
+
       
         // Establishing the relationship
         sd.setStudent(s);

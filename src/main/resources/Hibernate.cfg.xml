@@ -19,6 +19,9 @@
 
 		<mapping class="com.practise.Entity.Student" />
 		<mapping class="com.practise.Entity.StudentDoc" />
+		<mapping class="com.practise.Entity.StudVehicles" />
+
+
 
 	</session-factory>
 </hibernate-configuration>
