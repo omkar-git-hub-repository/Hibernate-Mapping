@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class StudentDoc {
@@ -15,7 +16,17 @@ public class StudentDoc {
     private String PanNumber;
     private String AadharNumber;
 
-    
+    @OneToOne(mappedBy = "studentDoc")
+    private Student student;
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
     public int getId() {
         return id;
     }

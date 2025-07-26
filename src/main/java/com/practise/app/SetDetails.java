@@ -19,20 +19,24 @@ public class SetDetails {
         
         System.out.println("Setting up application details...");
         Student s = new Student();
-        s.setName("John Doe");
-        s.setEmail("john.doe@example.com");
+        s.setName("Alice Doe");
+        s.setEmail("alice.doe@example.com");
 
         
         
         StudentDoc sd = new StudentDoc();
-        sd.setPanNumber("ABCDE1234F");
-        sd.setAadharNumber("1234-5678-9012");
-        
+        sd.setPanNumber("ASKO-1234k");
+        sd.setAadharNumber("5421-7849-6523");
+      
+        // Establishing the relationship
+        sd.setStudent(s);
         s.setStudentDoc(sd);
 
-        session.persist(s);
+        
+        session.persist(sd);
+
         transaction.commit();
         session.close();
+        System.out.println("Details set successfully: " + s);
     }
-
 }
