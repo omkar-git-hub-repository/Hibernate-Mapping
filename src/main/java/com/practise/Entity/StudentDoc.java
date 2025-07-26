@@ -11,6 +11,7 @@ public class StudentDoc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String PanNumber;
     private String AadharNumber;
 
@@ -39,6 +40,5 @@ public class StudentDoc {
     public String toString() {
         return "StudentDoc [id=" + id + ", PanNumber=" + PanNumber + ", AadharNumber=" + AadharNumber + "]";
     }
-    
 
 }
