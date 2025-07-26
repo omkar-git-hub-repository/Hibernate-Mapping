@@ -1,5 +1,8 @@
 package com.practise.app;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -32,7 +35,8 @@ public class SetDetails {
         StudVehicles sv = new StudVehicles();
         sv.setVehicleName("Activa ");
         sv.setVehicleType("Two Wheeler");
-        sv
+       
+        sv.setStudent(s);
 
       
         // Establishing the relationship
@@ -40,7 +44,8 @@ public class SetDetails {
         s.setStudentDoc(sd);
 
         // Persisting the entities of StudentDoc due to mappedBy relationship it will automatically persist the Student entity
-        session.persist(sd);
+        
+        session.persist(s);
 
         transaction.commit();
         session.close();
