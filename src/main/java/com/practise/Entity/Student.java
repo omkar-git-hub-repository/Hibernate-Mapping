@@ -10,6 +10,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Student {
@@ -21,7 +23,7 @@ public class Student {
     private String name;
     private String email;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_doc_id")
     private StudentDoc studentDoc;
 
@@ -42,7 +44,7 @@ public class Student {
     public void setStudentDoc(StudentDoc studentDoc) {
         this.studentDoc = studentDoc;
     }
-    
+
     public int getId() {
         return id;
     }

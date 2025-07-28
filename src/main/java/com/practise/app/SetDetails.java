@@ -23,22 +23,38 @@ public class SetDetails {
         
         System.out.println("Setting up application details...");
         Student s = new Student();
-        s.setName("kia sain");
-        s.setEmail("Kia@gmail.com");
+        s.setName("Sam Smith");
+        s.setEmail("Sam@gmail.com");
 
         
         
         StudentDoc sd = new StudentDoc();
-        sd.setPanNumber("RWQIJ-1234-5678");
-        sd.setAadharNumber("1234-5678-9101");
+        sd.setPanNumber("ABCDE1234F");
+        sd.setAadharNumber("1234-5678-9012");
 
         StudVehicles sv = new StudVehicles();
-        sv.setVehicleName("Activa ");
-        sv.setVehicleType("Two Wheeler");
+        sv.setVehicleName("Gt 650");
+        sv.setVehicleType("Bike");
        
         sv.setStudent(s);
+        StudVehicles sv1 = new StudVehicles();
+        sv1.setVehicleName("Honda Shine");
+        sv1.setVehicleType("Bike");
+        sv1.setStudent(s);
 
-      
+        // Setting the student for the second vehicle
+        // This is necessary to maintain the bidirectional relationship
+        // between StudVehicles and Student
+        
+        StudVehicles sv2 = new StudVehicles();
+        sv2.setVehicleName("Honda Amaze");
+        sv2.setVehicleType("Car");
+        sv2.setStudent(s);
+
+        List<StudVehicles> vehicles = Arrays.asList(sv, sv1, sv2);
+        s.setStudVehicles(vehicles);
+
+
         // Establishing the relationship
         sd.setStudent(s);
         s.setStudentDoc(sd);
