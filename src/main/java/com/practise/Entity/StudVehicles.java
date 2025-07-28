@@ -4,7 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class StudVehicles {
@@ -16,7 +17,8 @@ public class StudVehicles {
     private String vehicleName;
     private String vehicleType;
 
-    @OneToMany(mappedBy = "studVehicles")
+    @ManyToOne
+    @JoinColumn(name = "student_id")
     private Student student;
 
     public Student getStudent() {

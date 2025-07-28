@@ -1,6 +1,8 @@
 package com.practise.Entity;
 
 
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,12 +25,24 @@ public class Student {
     @JoinColumn(name = "student_doc_id")
     private StudentDoc studentDoc;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "student")
+    private List<StudVehicles> studVehicles;
+
+    public List<StudVehicles> getStudVehicles() {
+        return studVehicles;
+    }
+
+    public void setStudVehicles(List<StudVehicles> studVehicles) {
+        this.studVehicles = studVehicles;
+    }
+
     public StudentDoc getStudentDoc() {
         return studentDoc;
     }
     public void setStudentDoc(StudentDoc studentDoc) {
         this.studentDoc = studentDoc;
     }
+    
     public int getId() {
         return id;
     }
